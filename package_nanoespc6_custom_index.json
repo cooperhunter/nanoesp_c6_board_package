@@ -16,8 +16,8 @@
                     "category": "Contributed",
                     "url": "https://github.com/cooperhunter/nanoesp_c6_board_package/releases/download/v1.0.0/nanoespc6-hw-pack-v1.0.0.zip",
                     "archiveFileName": "nanoespc6-hw-pack-v1.0.0.zip",
-                    "checksum": "SHA-256:ЗДЕСЬ_БУДЕТ_КОНТРОЛЬНАЯ_СУММА_ВАШЕГО_ZIP_АРХИВА",
-                    "size": "ЗДЕСЬ_БУДЕТ_РАЗМЕР_ВАШЕГО_ZIP_АРХИВА_В_БАЙТАХ",
+                    "checksum": "SHA-256:2A45A14AB3672AABD462E70AA34E2B92792ACE57161FA99F1927D8B83E4B67DA",
+                    "size": "1,601 bytes",
                     "help": {
                         "online": "https://github.com/cooperhunter/nanoesp_c6_board_package"
                     },
