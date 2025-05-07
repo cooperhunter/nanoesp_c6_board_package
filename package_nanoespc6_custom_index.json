@@ -1,35 +1,35 @@
 {
     "packages": [
-      {
-        "name": "NanoESP-C6 Custom",
-        "maintainer": "VasheImyaNaGitHub",
-        "websiteURL": "https://github.com/VasheImyaNaGitHub/nanoesp_c6_board_package",
-        "email": "vash.email@example.com",
-        "help": {
-          "online": "https://github.com/VasheImyaNaGitHub/nanoesp_c6_board_package/issues"
-        },
-        "platforms": [
-          {
-            "name": "Плата NanoESP-C6 (пользовательская)",
-            "architecture": "esp32",
-            "version": "1.0.0",
-            "category": "Contributed",
-            "url": "https://github.com/VasheImyaNaGitHub/nanoesp_c6_board_package/releases/download/v1.0.0/nanoespc6-hw-pack-1.0.0.zip",
-            "archiveFileName": "nanoespc6-hw-pack-1.0.0.zip",
-            "checksum": "SHA-256:ЗДЕСЬ_БУДЕТ_КОНТРОЛЬНАЯ_СУММА_ZIP_АРХИВА",
-            "size": "ЗДЕСЬ_БУДЕТ_РАЗМЕР_ZIP_АРХИВА_В_БАЙТАХ",
+        {
+            "name": "NanoESP-C6 Custom Board by Roman Korotkykh",
+            "maintainer": "Roman Korotkykh (cooperhunter)",
+            "websiteURL": "https://github.com/cooperhunter/nanoesp_c6_board_package",
+            "email": "romankorotkykh@gmail.com",
             "help": {
-              "online": "https://github.com/VasheImyaNaGitHub/nanoesp_c6_board_package"
+                "online": "https://github.com/cooperhunter/nanoesp_c6_board_package/issues"
             },
-            "boards": [
-              {
-                "name": "NanoESP-C6 v1.0 (16M Flash, OPI PSRAM)"
-              }
+            "platforms": [
+                {
+                    "name": "NanoESP-C6 (ESP32-C6) by cooperhunter",
+                    "architecture": "esp32",
+                    "version": "1.0.0",
+                    "category": "Contributed",
+                    "url": "https://github.com/cooperhunter/nanoesp_c6_board_package/releases/download/v1.0.0/nanoespc6-hw-pack-v1.0.0.zip",
+                    "archiveFileName": "nanoespc6-hw-pack-v1.0.0.zip",
+                    "checksum": "SHA-256:ЗДЕСЬ_БУДЕТ_КОНТРОЛЬНАЯ_СУММА_ВАШЕГО_ZIP_АРХИВА",
+                    "size": "ЗДЕСЬ_БУДЕТ_РАЗМЕР_ВАШЕГО_ZIP_АРХИВА_В_БАЙТАХ",
+                    "help": {
+                        "online": "https://github.com/cooperhunter/nanoesp_c6_board_package"
+                    },
+                    "boards": [
+                        {
+                            "name": "NanoESP-C6 v1.0 (16M Flash, OPI PSRAM)"
+                        }
+                    ],
+                    "toolsDependencies": []
+                }
             ],
-            "toolsDependencies": []
-          }
-        ],
-        "tools": []
-      }
+            "tools": []
+        }
     ]
-  }
+}
