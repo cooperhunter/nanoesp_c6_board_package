@@ -1,70 +1,31 @@
 #############################################################################
-# NanoESP-C6 v1.0 (16MB Flash, OPI PSRAM) by Roman Korotkykh (cooperhunter)
-# This board definition is intended to be used with an existing
-# Espressif ESP32 Arduino core installation (e.g., v3.2.0 or newer).
-# It will appear under the "ESP32 Arduino" boards menu after installing
-# the custom package via the Boards Manager.
+# NanoESP-C6 v1.0 (16MB Flash, OPI PSRAM) - Custom Definition TEST
 #############################################################################
 
-# Unique prefix for all properties of this board definition
-nanoespc6custom.name=NanoESP-C6 v1.0 (16M Flash, OPI PSRAM by cooperhunter)
+# Используем новый префикс для избежания конфликтов
+myc6test.name=ZZZ Test - NanoESP-C6 v1.0 (16M+OPI PSRAM) # ZZZ чтобы было в конце списка
 
-# --- Core Properties: Tells Arduino IDE to use ESP32-C6 core components ---
-nanoespc6custom.build.board=ESP32C6_DEV       # Inherits base properties from a generic ESP32C6 Dev board
-nanoespc6custom.build.core=esp32              # Uses the 'esp32' Arduino core
-nanoespc6custom.build.variant=esp32c6         # Specifies the 'esp32c6' variant within the core
-nanoespc6custom.build.mcu=esp32c6             # Microcontroller type
+# --- Основные настройки ---
+myc6test.build.board=ESP32C6_DEV
+myc6test.build.core=esp32
+myc6test.build.variant=esp32c6
+myc6test.build.mcu=esp32c6
+myc6test.build.f_cpu=160000000L
+myc6test.build.flash_mode=qio
+myc6test.build.flash_freq=80m
 
-# --- Standard Build Properties ---
-nanoespc6custom.build.f_cpu=160000000L        # CPU Frequency: 160MHz
-nanoespc6custom.build.flash_mode=qio          # Flash Mode: QIO (Quad I/O) - common for ESP32C6 for speed
-nanoespc6custom.build.flash_freq=80m          # Flash Frequency: 80MHz
-nanoespc6custom.build.extra_flags=            # Clears any inherited extra_flags we don't want by default
+# --- Обязательное меню Flash Size ---
+myc6test.menu.FlashSize.16M=16MB (128Mb)
+myc6test.menu.FlashSize.16M.build.flash_size=16M
+myc6test.menu.FlashSize.default=16M
 
-# --- Flash Size Menu ---
-# Defines options for the "Flash Size" menu in Arduino IDE
-nanoespc6custom.menu.FlashSize.16M=16MB (128Mb)
-nanoespc6custom.menu.FlashSize.16M.build.flash_size=16M # Sets the build system's flash size parameter
-nanoespc6custom.menu.FlashSize.default=16M              # Default selected option for this board
+# --- Обязательное меню PSRAM ---
+myc6test.menu.PSRAM.disabled=PSRAM Disabled
+myc6test.menu.PSRAM.disabled.build.psram_type=disabled
+myc6test.menu.PSRAM.opi=OPI PSRAM Enabled
+myc6test.menu.PSRAM.opi.build.psram_type=opi
+myc6test.menu.PSRAM.default=opi # По умолчанию включаем PSRAM
 
-# --- PSRAM Menu ---
-# Defines options for the "PSRAM" menu.
-# The 'build.psram_type' is used by the ESP32 core's platform.txt to set appropriate SDKCONFIG flags.
-nanoespc6custom.menu.PSRAM.disabled=PSRAM Disabled
-nanoespc6custom.menu.PSRAM.disabled.build.psram_type=disabled # Value that platform.txt uses to disable PSRAM flags
-
-nanoespc6custom.menu.PSRAM.opi=OPI PSRAM Enabled (Recommended)
-nanoespc6custom.menu.PSRAM.opi.build.psram_type=opi       # Value that platform.txt uses to enable OPI PSRAM flags
-                                                          # This should trigger -DCONFIG_SPIRAM_SUPPORT=y and OPI mode flags.
-nanoespc6custom.menu.PSRAM.default=opi # DEFAULT SETTING: OPI PSRAM will be enabled by default for this board.
-
-# --- Partition Scheme Menu ---
-# Uses standard partition schemes available in the ESP32 Arduino core.
-# 'default_16MB' should be a predefined 16MB partition scheme in the core.
-nanoespc6custom.menu.PartitionScheme.default_16MB=Default 16MB (Core Default)
-nanoespc6custom.menu.PartitionScheme.default_16MB.build.partitions=default_16MB
-nanoespc6custom.menu.PartitionScheme.default=default_16MB # Default partition scheme for this board
-
-# --- Upload Speed Menu ---
-nanoespc6custom.menu.UploadSpeed.921600=921600
-nanoespc6custom.menu.UploadSpeed.921600.upload.speed=921600
-nanoespc6custom.menu.UploadSpeed.default=921600
-
-# --- USB CDC On Boot Menu (Serial over USB) ---
-nanoespc6custom.menu.CDCOnBoot.cdc=Enabled
-nanoespc6custom.menu.CDCOnBoot.cdc.build.cdc_on_boot=1 # Corresponds to -DARDUINO_USB_CDC_ON_BOOT=1
-nanoespc6custom.menu.CDCOnBoot.disable=Disabled
-nanoespc6custom.menu.CDCOnBoot.disable.build.cdc_on_boot=0
-nanoespc6custom.menu.CDCOnBoot.default=cdc # Default to CDC enabled
-
-# --- Core Debug Level Menu ---
-nanoespc6custom.menu.DebugLevel.none=None
-nanoespc6custom.menu.DebugLevel.none.build.code_debug=0 # Corresponds to -DCORE_DEBUG_LEVEL=0
-# Add other levels (Verbose, Debug, etc.) if needed, copying from the main boards.txt
-nanoespc6custom.menu.DebugLevel.default=none
-
-# --- Upload Related Settings ---
-nanoespc6custom.upload.tool=esptool_py                 # Uses the standard esptool from the ESP32 core
-nanoespc6custom.upload.maximum_size=16777216           # Max sketch size for 16MB flash
-nanoespc6custom.upload.erase_cmd=erase_flash           # Allows "Erase Flash: All" option to work
-nanoespc6custom.upload.wait_for_upload_port=true
+# --- Обязательные настройки загрузки ---
+myc6test.upload.tool=esptool_py
+myc6test.upload.maximum_size=16777216
